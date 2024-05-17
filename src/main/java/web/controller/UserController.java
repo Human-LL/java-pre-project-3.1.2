@@ -1,12 +1,13 @@
 package web.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import web.model.User;
+import web.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import web.model.User;
-import web.service.UserService;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,13 +28,13 @@ public class UserController {
     @GetMapping
     public String allUsers(Model model) {
         model.addAttribute("users", userService.allUser());
-        return "user/user-list";
+        return "user-list";
     }
 
     @GetMapping("/new")
     public String createUserForm(Model model) {
         model.addAttribute("user", new User());
-        return "user/user-create";
+        return "user-create";
     }
 
     @PostMapping
@@ -45,7 +46,7 @@ public class UserController {
     @GetMapping("/edit")
     public String editUserForm(@RequestParam("id") Long id, Model model) {
         userService.findById(id).ifPresent(model::addAttribute);
-        return "user/edit-user";
+        return "edit-user";
     }
 
     @PostMapping("/edit")

@@ -12,9 +12,9 @@ public interface UserService {
 
     Optional<User> findById(Long id);
 
-    void saveUser(User user);
+    User saveUser(User user);
 
-    void updateUser(User user);
+    User updateUser(User user);
 
     void deleteById(Long id);
 }
