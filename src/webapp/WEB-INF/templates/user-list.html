@@ -23,11 +23,13 @@
         <td th:text="${user.email}"></td>
         <td th:text="${user.age}"></td>
         <td>
-            <form th:action="@{/users/edit}" style="display: inline-block;">
-                <button type="submit" th:name="id" th:value="${user.id}">Edit</button>
+            <form th:action="@{/users/edit}" method="get" style="display: inline-block;">
+                <input type="hidden" name="id" th:value="${user.id}" />
+                <button type="submit">Edit</button>
             </form>
             <form method="post" th:action="@{/users/delete}" style="display: inline-block;">
-                <button type="submit" th:name="id" th:value="${user.id}">Delete</button>
+                <input type="hidden" name="id" th:value="${user.id}" />
+                <button type="submit">Delete</button>
             </form>
         </td>
     </tr>

@@ -1,7 +1,6 @@
 package web.dao;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+
 import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
@@ -9,6 +8,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.Optional;
 
 @Repository
