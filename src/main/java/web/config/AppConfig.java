@@ -1,25 +1,21 @@
 package web.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 import web.model.User;
 
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
-@PropertySource("classpath:db.properties")
-@EnableTransactionManagement
+
+@RequiredArgsConstructor
 public class AppConfig {
 
-    @Autowired
     private Environment env;
 
     @Bean
