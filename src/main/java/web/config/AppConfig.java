@@ -1,6 +1,5 @@
 package web.config;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
@@ -11,7 +10,6 @@ import web.model.User;
 
 import javax.sql.DataSource;
 import java.util.Properties;
-
 
 @RequiredArgsConstructor
 public class AppConfig {

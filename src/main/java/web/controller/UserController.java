@@ -1,6 +1,5 @@
 package web.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import web.model.User;
 import web.service.UserService;
